@@ -1,0 +1,17 @@
+9 -> NUMBER
+" " -> WITESPACE
+\t -> 
+1231 -> NUMBER
+if -> KEYWORD
+
+9 -> NUMBER<9>
+9\n -> NUMBER<9> EOL
+
+exp EOL
+NUMBER<9> EOL
+9
+
+Compiler:
+flex lex.l
+bison -d -t parser.y
+gcc lex.yy.c parser.tab.c
